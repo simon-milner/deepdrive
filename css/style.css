@@ -1,0 +1,748 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+#landing-page-navbar {grid-area: landing-page-navbar;}
+#main-grid-container {grid-area: main-grid-container;}
+#landing-page-footer {grid-area: landing-page-footer;}
+
+#landing-page-container{
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    'landing-page-navbar'
+    'main-grid-container'
+    'landing-page-footer';
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #343a40;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+#hero {grid-area: hero;}
+#why-section {grid-area: why-section; padding: 20px;}
+#what-section {grid-area: what-section; padding: 20px;}
+#how-section {grid-area: how-section; padding: 20px;}
+#how-section {grid-area: how-section; padding: 20px;}
+#latest-podcasts-section {grid-area: latest-podcasts-section; padding: 20px;}
+#contact-section {grid-area: contact-section; padding: 20px;}
+#follow-section {grid-area: follow-section; padding: 20px;}
+
+
+#main-grid-container{
+  display: grid;
+  grid-template-areas: 
+    'hero hero hero'
+    'why-section what-section how-section'
+    'latest-podcasts-section latest-podcasts-section latest-podcasts-section'
+    'contact-section contact-section follow-section';
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+
+
+main > section:nth-child(even){
+  background: #777;
+}
+
+
+h1 { font-family: Lato; font-size: 50px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 60px; padding: 0px; margin-top: 20px; margin-bottom: 50px; text-align: center;} 
+h2 { font-family: Lato; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 600; line-height: 32px; padding: 10px 0px;} 
+h3 { font-family: Lato; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 22px; padding: 10px 10px 10px 20px; margin-bottom: 1rem;} 
+h4 { font-family: Lato; font-size: 28px; font-style: normal; font-variant: normal; font-weight: 300; line-height: 20px; padding: 30px 10px 0px 5px;} 
+p { font-family: Lato; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; padding: 10px 10px 10px 20px; margin-bottom: 0px;} 
+.p-body { font-size: 16px; font-weight: 400; line-height: 34px; color: #667080; margin-top: 8px;}
+.p-header {font-size: 14px; font-weight: 500; line-height: 17px; color: #191B1D; margin-bottom: 0px;}
+.black {color: black;}
+.heavy-weight {font-weight: 700; padding: 50px 0 0 0; margin-top: 50px;}
+.pad-left {padding: 0 0 0 20px;}
+.accordion-panel__content .margin-bottom {margin-bottom: 20px;}
+
+a { font-family: Lato; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;} 
+blockquote { font-family: Lato; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+pre { font-family: Lato; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 15px; }
+input { font-family: Lato; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 300; line-height: 15px; padding: 5px; margin-bottom: 5px; width: 100%;} 
+textarea { font-family: Lato; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 300; line-height: 15px; padding: 5px; margin-bottom: 5px; } 
+footer > p { font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 0px; padding: 0px; } 
+
+
+table { width:100%;}
+td { border:1px solid #ccc;}
+ul{	margin: 0;padding: 0 0 0 20px;}
+p{margin: 0 0 10px 0;}
+.text-right { text-align:right;}
+.text-center { text-align:center;}
+h4{margin: 0 0 10px;}
+
+/* Remove focus ring as all screen readers tested on, add their own focus ring */
+:focus{
+  outline: 0;
+}
+/*
+.message-us {grid-area: message-us;}
+.our-address {grid-area: our-address;}
+.follow-us {grid-area: follow-us;}
+
+/*
+.grid-container{
+  display: grid;
+  grid-template-areas:  
+    'message-us our-address'
+    'message-us follow-us';
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;    
+  margin-bottom: 30px;                 
+}*/
+
+.grid-container > div{
+  background: #3bbced;
+  padding: 30px;
+}
+
+.grid-container > div:nth-child(even){
+  background: #777;
+}
+
+.txt-vertical-center {
+  position: relative;
+  min-height: 220px;
+}
+
+.txt-vertical-center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-control {
+  width: 100%;
+}
+
+.col-sm-6 {
+  padding: 0 20px;
+}
+
+.col-sm-12 {
+  padding: 0 20px;
+}
+
+#contactForm p {
+  padding: 20px 10px 10px 5px;
+}
+
+#contactForm .box {
+  border-radius: 3px;
+  overflow: hidden;
+  /*border: 3px solid #b50d10;*/
+  background-color: rgb(51,51,51);
+  color: #fff;
+}
+#contactForm .box h1,
+#contactForm .box h2,
+#contactForm .box h3 {
+  color: #fff;
+}
+#contactForm .box a {
+  /* color: #999; */
+  color: white;
+}
+#contactForm .box a:hover {
+  color: #52b6ec;
+}
+#contactForm .box input[type="text"],
+#contactForm .box input[type="email"],
+#contactForm .box textarea {
+  background-color: #111;
+  border: 0;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+#contactForm .box input[type="text"]:focus,
+#contactForm .box input[type="email"]:focus,
+#contactForm .box textarea:focus {
+  background-color: #000;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#message {
+  margin-bottom: 15px;
+}
+
+
+/* ---------------------------------
+
+		A C C O R D I A N
+
+--------------------------------- */
+
+.accordion{
+	border-radius: 3px;
+	overflow: hidden;
+	border: 1px solid #b50d10;
+}
+
+.accordion-panel__heading{
+	position: relative;
+	padding: 20px;
+	display: block;
+	text-decoration: none;
+	color: #b50d10;
+	background: #f5f5f5;
+	font-size: 18px;
+	font-weight: 600;
+	transition: all .4s;
+	cursor:pointer;
+}
+.accordion-panel__heading:not(:last-child){
+  border-bottom: 1px solid #b50d10;
+}
+.accordion-panel__heading:before{
+	transition: all .4s ease;
+	content: "";
+	border: 0px #6495ED solid;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+}
+.accordion-panel__heading.active:before{
+	transition: all .4s;
+	border-left: 8px #b50d10 solid;
+}
+.accordion-panel__heading:HOVER{
+	color: #333;
+	background: #f1f1f1;
+	transition: all .4s;
+}
+.accordion-panel__heading.active:HOVER,
+.accordion-panel__heading.active {
+  transition: all .4s;
+  color: #333;
+  background: #fff;
+  border-bottom: 0;
+  padding: 20px 20px 20px 30px;
+}
+.accordion-panel__content{
+  transition: all .4s;
+  position: relative;
+  padding: 0 20px 0 20px;
+  background: #f1f1f1;
+  max-height: 0;
+  overflow: hidden;
+}
+.accordion-panel__content:before{
+  transition: all .4s ease;
+  content: "";
+  border: 0px #6495ED solid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+}
+.accordion-panel__content.active:before{
+  transition: all .4s;
+  border-left: 8px #b50d10 solid;
+}
+.accordion-panel__content.active {
+  transition: all .4s;
+  max-height: 500px;
+  background: #fff;
+  padding: 0px 20px 30px 30px;
+}
+
+
+.accordion-panel__content p {
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;  
+}
+
+.scroll-container {
+  max-width: auto;
+  margin: auto;
+  overflow: auto;
+  padding: 0 2 rem;
+}
+
+.FAQ-container {
+  margin-bottom: 60px;
+}
+.FAQ-container >h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.border p {
+  font-weight: 300;
+}
+
+
+.main-header {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.main-header h1 {
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.main-header h1 span {
+  color: #b50d10;
+}
+
+.main-header p1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.main-header p2 {
+  margin-top: 0.9rem;
+  font-size: 1.5rem;
+}
+
+p span {
+  color: #b50d10;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+/* Unicode character for "plus" sign (+) 
+p.accordion:after {
+  content: '\2795'; 
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}*/
+
+/* Unicode character for "minus" sign (-)
+p.accordion:active:after {
+  content: "\2796"; 
+}*/
+
+.container {
+  width: 100%;
+  margin: 0px auto;
+}
+
+button.accordion {
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.8s linear;
+}
+
+button.accordion:after {
+  content: '\f055';
+  font-family: "fontawesome";
+  font-size: 20px;
+  float: right;
+}
+
+button.accordion.is-open:after {
+  content: '\f056';
+}
+
+button.accordion:hover, button.accordion.is-open {
+  background-color: #ddd;
+}
+
+.accordion-content {
+  background-color: white;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 15px 20px;
+  max-height: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+/*
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  background: #f1f1f1;
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+}*/
+
+/*
+.card h3, p1, p2 {
+  margin-bottom: 1rem;
+}*/
+
+card img {
+  height: 400px;
+}
+
+.card div {
+  padding: 1rem;
+}
+
+.card:nth-child(even) img {
+  order: 2;
+}
+
+.btn {
+  display: inline-block;
+  background: #b50d10;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+
+.blog-body .p-body .margin-top {
+  margin-top: 2 rem;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.dotless {
+	list-style: none;
+}
+
+.page-title {
+	text-align: center;
+	margin: 2rem;
+}
+
+.dropdown-container {
+	max-width: 800px;
+	min-width: 300px;
+	margin: 1rem auto;
+	border: 1px solid #ccc;
+	background-color: white;
+	color: #888;
+	overflow: hidden;
+}
+
+.dropdown-container {
+	background-color: white;
+}
+
+.dropdown-container header {
+	cursor: pointer;
+	font-size: 0.6rem;
+	padding: 1rem;
+	background-color: mediumspringgreen;
+	color: white;
+	transition: background-color 350ms ease-in-out;
+}
+
+.dropdown-container.open header {
+	background-color: springgreen;
+}
+
+.dropdown-container h1 {
+	float: left;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+
+.dropdown-container .expand {
+	float: right;
+	transform: rotate(45deg);
+	font-size: 1.8em;
+	transition: transform 350ms ease-in-out;
+}
+
+.dropdown-container.open .expand{
+	transform: rotate(0);
+}
+
+
+.dropdown-container article {
+	max-height: 0px;
+	overflow: hidden;
+	line-height: 1.6; 
+	transition: max-height 350ms ease-in-out;
+}
+
+/* padding can't be on article element because it won't collapse properly, add wrapper around contents */
+.dropdown-container .article-inner {
+	padding: 1rem;
+}
+
+
+
+
+
+
+/** This class will hide all the body by default **/
+#accordion .acc-body {
+  display: none;
+}
+/** This class will show the body if it has "active" parent class. "active" class will be added to panel div **/
+#accordion .active .acc-body {
+  display: block;
+}
+
+.message-us {grid-area: message-us;}
+.our-address {grid-area: our-address;}
+.follow-us {grid-area: follow-us;}
+
+.grid-container{
+  display: grid;
+  grid-template-areas:  
+    'message-us our-address'
+    'message-us follow-us';
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;    
+  margin-bottom: 30px;                 
+}
+
+.grid-container > div{
+  background: #3bbced;
+  padding: 30px;
+}
+
+.grid-container > div:nth-child(even){
+  background: #777;
+}
+
+.name {grid-area: name;}
+.email-address {grid-area: email-address;}
+.message {grid-area: message;}
+
+.submit-form-container{
+  display: grid;
+  grid-template-areas:
+    'name email-address'
+    'message message';
+    grid-template-columns: 1fr 1fr;
+}
+
+.follow-us h3 {grid-area: header;}
+.icons-container1 {grid-area: icons-container1;}
+.icons-container2 {grid-area: icons-container2;}
+
+.follow-us{
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'icons-container1 icons-container2';
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* Blog Page */
+.blog-image {grid-area: blog-image;}
+.blog-image-lable {grid-area: blog-image-lable;}
+.blog-body {grid-area: blog-body;}
+
+#blog-content-wrap{
+  display: grid;
+  grid-template-areas:  
+    'blog-image blog-image-lable'
+    'blog-body blog-body';
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin: 0 auto;    
+  margin-bottom: 30px;                 
+}
+
+#blog-content-wrap{
+  padding-bottom: 0.5rem; /* Footer height */
+}
+
+footer{
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 2rem; /* Footer height */
+}
+
+@media(max-width: 700px) {
+  body {
+    padding: 0;
+  }
+
+  #main-grid-container{
+    display: grid;
+    grid-template-areas: 
+      'hero'
+      'why-section'
+      'what-section'
+      'how-section'
+      'latest-podcasts-section'
+      'contact-section'
+      'follow-section';
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+  h1 { font-size: 50px;} 
+  h2 { font-size: 25px;} 
+  h3 { font-size: 18px;} 
+  .card {
+    display: block;
+  }
+  .main-header {
+    height: auto;
+  }
+
+  .FAQ-container {
+    padding: 5px;
+  }
+
+  #contactForm {
+    padding: 5px;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-areas:  
+      'message-us'
+      'our-address'
+      'follow-us';
+      grid-template-columns: 1fr;
+  }
+
+  .submit-form-container{
+    display: grid;
+    grid-template-areas:
+      'name'
+      'email'
+      'message';
+      grid-template-columns: 1fr;
+  }
+
+  .follow-us{
+    display: grid;
+    grid-template-areas:
+      'header'
+      'icons-container1' 
+      'icons-container2';
+    grid-template-columns: 1fr;
+  }
+
+  /* Blog Page */
+
+  #blog-content-wrap{
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 0px;
+    display: grid;
+    grid-template-areas:  
+      'blog-image'
+      'blog-image-lable'
+      'blog-body';
+    grid-template-columns: 1fr;        
+  }
+
+
+
+
