@@ -10,16 +10,16 @@ html, body{
 } */
 
 #landing-page-navbar {grid-area: landing-page-navbar;}
-#main-grid-container {grid-area: main-grid-container;}
+#landing-page-main-grid-container {grid-area: landing-page-main-grid-container;}
 #landing-page-footer {grid-area: landing-page-footer;}
 
-#landing-page-container{
+#landing-page-main-container{
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: 
     'landing-page-navbar'
-    'main-grid-container'
+    'landing-page-main-grid-container'
     'landing-page-footer';
 }
 
@@ -611,7 +611,7 @@ footer{
 <!---------------------------->*/
 
 #who-we-are-page-navbar {grid-area: who-we-are-page-navbar;}
-#who-we-are-grid-container {grid-area: who-we-are-grid-container;}
+#who-we-are-main-grid-container {grid-area: who-we-are-main-grid-container;}
 #who-we-are-page-footer {grid-area: who-we-are-page-footer;}
 
 #who-we-are-page-container{
@@ -620,7 +620,7 @@ footer{
   grid-template-columns: 1fr;
   grid-template-areas: 
     'who-we-are-page-navbar'
-    'who-we-are-grid-container'
+    'who-we-are-main-grid-container'
     'who-we-are-page-footer';
 }
 
@@ -644,7 +644,7 @@ footer{
 #Driver {grid-area: Driver; padding: 20px;}
 
 
-#who-we-are-grid-container{
+#who-we-are-main-grid-container{
   display: grid;
   grid-template-areas: 
     'hero hero hero'
@@ -670,16 +670,6 @@ footer{
 
   .hero-text-block > h1 {font-size: 20px; margin-top: 5px;}
 
-  #who-we-are-page-container{
-    display: grid;
-    grid-template-areas: 
-      'who-we-are-hero'
-      'Marc'
-      'Simon'
-      'Driver';
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
 
   #main-grid-container{
       display: grid;
@@ -695,7 +685,7 @@ footer{
       width: 100%;
   }
 
-  #who-we-are-grid-container{
+  #who-we-are-main-grid-container{
     display: grid;
     grid-template-areas: 
       'hero'
