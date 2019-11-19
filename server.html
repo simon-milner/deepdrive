@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
 <html>
   <head>
     <title>Practice AJAX</title>
@@ -14,7 +12,7 @@
             result.innerHTML = this.responseText;
           } 
         }
-        req.open('POST', 'http://18.217.197.94:5000', true);
+        req.open('POST', '//18.217.197.94:5000', true);
         req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
         req.send("name=" + document.getElementById('name').value);
       }
