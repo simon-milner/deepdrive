@@ -32,12 +32,18 @@ html, body{
 .topnav a {
   float: left;
   display: block;
+  padding: 15px 20px;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   font-size: 14px;
+  height: 23px;
 }
+
+/*
+#not-home-icon {
+  padding: 15px 20px 15px 20px;
+}*/
 
 .topnav a:hover {
   background-color: #ddd;
@@ -57,8 +63,8 @@ html, body{
 #why-section {grid-area: why-section; padding: 20px;}
 #what-section {grid-area: what-section; padding: 20px;}
 #how-section {grid-area: how-section; padding: 20px;}
-#how-section {grid-area: how-section; padding: 20px;}
 #latest-podcasts-section {grid-area: latest-podcasts-section; padding: 20px;}
+.FAQ-container {grid-area: FAQ-section; padding: 20px;}
 #contact-section {grid-area: contact-section; padding: 20px;}
 #follow-section {grid-area: follow-section; padding: 20px;}
 
@@ -69,6 +75,7 @@ html, body{
     'hero hero hero'
     'why-section what-section how-section'
     'latest-podcasts-section latest-podcasts-section latest-podcasts-section'
+    'FAQ-section FAQ-section FAQ-section'
     'contact-section contact-section follow-section';
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
@@ -79,7 +86,7 @@ html, body{
 
 
 main > section:nth-child(even){
-  background: #777;
+  background: #e9e7e7;
 }
 
 
@@ -87,7 +94,10 @@ h1 { font-family: Lato; font-size: 40px; font-style: normal; font-variant: norma
 h2 { font-family: Lato; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 600; line-height: 32px; padding: 10px 0px;} 
 h3 { font-family: Lato; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 600; line-height: 12px; padding: 0; margin-bottom: 0.5rem;} 
 h4 { font-family: Lato; font-size: 28px; font-style: normal; font-variant: normal; font-weight: 300; line-height: 20px; padding: 30px 10px 0px 5px;} 
-p { font-family: Lato; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; padding: 0; margin-bottom: 0px;} 
+/*p { font-family: Lato; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; padding: 0; margin-bottom: 0px;} 
+*/
+p { font-family: Lato; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px; padding: 10px 10px 10px 20px; margin-bottom: 0px;} 
+
 .p-body { font-size: 16px; font-weight: 400; line-height: 34px; color: #667080; margin-top: 8px;}
 .p-header {font-size: 14px; font-weight: 500; line-height: 17px; color: #191B1D; margin-bottom: 0px;}
 .black {color: black;}
@@ -140,9 +150,6 @@ h4{margin: 0 0 10px;}
   padding: 30px;
 }
 
-.grid-container > div:nth-child(even){
-  background: #777;
-}
 
 .txt-vertical-center {
   position: relative;
