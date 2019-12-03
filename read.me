@@ -1,0 +1,66 @@
+https://www.bogotobogo.com/DevOps/AWS/aws-ELB-ALB-Application-Load-Balancer-ECS.php
+
+ALB w/ two Flask apps
+
+Dockerfile is a text auto-build file. 
+
+ALB gets request on port 80 and, depending on URI path, redirects the request to the proper (one of two) Flask apps. 
+    . "/" to home -- ALB routes request to port 5000
+    . and "/blog" to our blog app -- ALB routes request to port 8081
+
+Two targets
+
+We're going to test and validate HTTP only first from our localserver running server.html client
+
+Listener performs two-sided function:
+    . Client-side: protocol and port - client -> ALB
+    . Server-side: protocol and port - ALB -> BE instance
+
+let's first get the port 5000 app on /server container tested with http
+
+https://docs.aws.amazon.com/efs/latest/ug/wt2-apache-web-server.html
+$ cd /var/www/html/efs-mount-point
+
+sudo ssh -i "TO1KeyPair.pem" ec2-user@ec2-18-217-197-94.us-east-2.compute.amazonaws.com
+
+sudo scp -i "TO1KeyPair.pem" web-scraper/dist/server.py ec2-user@ec2-18-217-197-94.us-east-2.compute.amazonaws.com:~/server.py
+server.py
+ 
+ ec2-user@ec2-18-217-197-94.us-east-2.compute.amazonaws.com:~/var/www/html/efs-mount-point/sampledir -- hello.html
+
+ access via browser
+ http://18.217.197.94/efs-mount-point/sampledir/hello.html
+
+So???? 
+is the home screen via browser, therefore, the following:
+ http://18.217.197.94/ === ec2-user@ec2-18-217-197-94.us-east-2.compute.amazonaws.com:~/var/www/html/
+
+With simple CORS flask header - and from localserver to 18.217... ip address, page downloads - no CORS plugin, works with and without plugin - SUCCESS.
+
+Access from DeepDrive/server creates cross-content HTTPS-HTTP browser error. 
+
+http://18.217.197.94/efs-mount-point/hello.html -- "Hello from AWS" -- working --- SUCCESS
+This is before the load balancer. 
+Now, to try and replicate this by publicly accessing the load balancer ...
+
+From localserver:
+accessing https://www.trustedorigins.org/efs-mount-point/hello.html and http /to.org... -- BOTH WORK -- SUCCESS
+
+So, now, next test: Try to.org from local server to get the port 5000 server to respond to XHR POST ...
+
+1. HTTP -- SUCCESS!!!
+
+2. HTTPS -- FAILURE!!!!
+    from localserver: net::ERR_SSL_PROTOCOL_ERROR
+    so, I'm now trying POSTMAN to issue from HTTP and HTTPS
+
+
+
+
+
+
+
+
+
+
+

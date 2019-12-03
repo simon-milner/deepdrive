@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Practice AJAX</title>
+    <title>Test AJAX</title>
     <script type="text/javascript">
       function do_ajax() {
         var req = new XMLHttpRequest();
@@ -12,7 +12,12 @@
             result.innerHTML = this.responseText;
           } 
         }
-        req.open('POST', 'http://18.217.197.94:5000', true);
+        req.open('POST', 'https://www.trustedorigins.org:5000', true);
+        // req.open('POST', '//www.trustedorigins.org:5000', true);
+        //req.open('POST', 'http://18.217.197.94/efs-mount-point/sampledir:5000', true);
+        // http://18.217.197.94/efs-mount-point/sampledir/server:5000
+
+        // req.open('POST', 'http://18.217.197.94:5000', true);
         // req.open('POST', 'https://localhost:5000', true);
         req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
         req.send("name=" + document.getElementById('name').value);
@@ -27,3 +32,13 @@
     </form>
   </body>
 </html>
+
+<!--
+
+/efs-mount-point/sampledir/hello.html
+
+load balancer dns: TOC-LB-df93cb965fa3ecd4.elb.us-east-2.amazonaws.com
+
+TOC-LB-df93cb965fa3ecd4.elb.us-east-2.amazonaws.com/efs-mount-point/sampledir/hello.html
+
+-->
