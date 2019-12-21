@@ -39,7 +39,8 @@ With simple CORS flask header - and from localserver to 18.217... ip address, pa
 
 Access from DeepDrive/server creates cross-content HTTPS-HTTP browser error. 
 
-http://18.217.197.94/efs-mount-point/hello.html -- "Hello from AWS" -- working --- SUCCESS
+http://
+/efs-mount-point/hello.html -- "Hello from AWS" -- working --- SUCCESS
 This is before the load balancer. 
 Now, to try and replicate this by publicly accessing the load balancer ...
 
@@ -55,6 +56,20 @@ So, now, next test: Try to.org from local server to get the port 5000 server to 
     so, I'm now trying POSTMAN to issue from HTTP and HTTPS
 
 
+
+sudo python3 -m pip install virtualenv -- command not found
+The solution is to use 
+    python3 -m pip as a psuedonym for pip
+
+
+Stuck with intermittent 503 error using classic load Balancer
+Appears that we have only one subnet set up, although the instance is configured for three, as follows:
+
+172.31.32.0/20 -- region 2c -- subnet-a913ace5
+172.31.0.0/20 -- region 2a -- subnet-773d241f
+172.31.16.0/20 -- region 2b -- subnet-1fb3e465
+
+Going back to classic lb settings to see if we can map these subnets now ...
 
 
 
